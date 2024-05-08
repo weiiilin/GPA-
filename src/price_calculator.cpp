@@ -1,6 +1,6 @@
-#include "./header/price_calculator.h"
+#include "price_calculator.h"
 
-PriceCalculator::PriceCalculotor(){
+PriceCalculator::PriceCalculator(){
 
 }
 int PriceCalculator::getPrice(string item){
