@@ -1,25 +1,22 @@
 #include "order_system.h"
 
-OrderSystem::OrderSystem(){
-
+OrderSystem::OrderSystem() {
+    // Constructor
 }
 
-void OrderSystem::add_to_order(string item){
-    if (order_count < 100) { //檢查訂單
+void OrderSystem::add_to_order(std::string item) {
+    if (order_count < 100) {
         order[order_count] = item;
         order_count++;
     } else {
-        cout << "您的訂單已滿!無法新增更多項目" << endl;
-        cout << "你好" << endl;
+        std::cout << "訂單已滿! 無法新增更多菜品" << std::endl;
     }
 }
 
-
-void OrderSystem::remove_from_order(string item){
+void OrderSystem::remove_from_order(std::string item) {
     bool found = false;
     for (int i = 0; i < order_count; i++) {
         if (order[i] == item) {
-            // 將找到的項目後面的項目往前移動
             for (int j = i; j < order_count - 1; j++) {
                 order[j] = order[j + 1];
             }
@@ -29,25 +26,25 @@ void OrderSystem::remove_from_order(string item){
         }
     }
     if (!found) {
-        cout << "訂單中沒有此項目!" << endl;
+        std::cout << "訂單中未找到此菜品!" << std::endl;
     }
 }
 
-void OrderSystem::view_order(){
-if (order_count > 0) {
-        cout << "您的訂單:" << endl;
+void OrderSystem::view_order() {
+    if (order_count > 0) {
+        std::cout << "您的訂單:" << std::endl;
         for (int i = 0; i < order_count; i++) {
-            cout << order[i] <<endl;
+            std::cout << order[i] << std::endl;
         }
     } else {
-        cout << "您的訂單為空!" << endl;
+        std::cout << "您的訂單是空的!" << std::endl;
     }
 }
 
-string* OrderSystem::get_order(){
+std::string* OrderSystem::get_order() {
     return order;
 }
 
-int OrderSystem::get_order_count(){
+int OrderSystem::get_order_count() {
     return order_count;
 }
