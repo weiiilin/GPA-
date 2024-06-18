@@ -1,17 +1,19 @@
-#ifndef price_calculator_H
-#define price_calculator_H
+#ifndef PRICE_CALCULATOR_H
+#define PRICE_CALCULATOR_H
+
 #include <string>
 #include <iostream>
-using namespace std ;
 
-class PriceCalculator{
+class PriceCalculator {
 public:
     PriceCalculator();
 
-    int getPrice(string);
-    int totalPrice(string*,int);
+    int get_price(std::string item);
+    int calculate_total_price(std::string* order, int order_count);
+
 private:
-    string menu[3]={"漢堡","薯條","可樂"};
-    int prices[3]={40,50,25};
+    std::string menu[3] = { "漢堡", "薯條", "可樂" };
+    int prices[3] = { 40, 50, 25 };
 };
+
 #endif
